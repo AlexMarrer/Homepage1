@@ -1,46 +1,36 @@
 window.addEventListener('scroll', () => {
-    console.log('scrolling');
     const scrollFraction = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
-    const rotationValue = scrollFraction * 360; // This will determine how much rotation depending on scroll
-    document.querySelector('.triangle img').style.transform = `rotateZ(${rotationValue}deg)`;
-});
-$(document).ready(function() {
+    const rotationValue = scrollFraction * 360;
 
-    //window and animation items
-    var animation_elements = $.find('.animation-element');
-    var web_window = $(window);
-  
-    //check to see if any animation containers are currently in view
-    function check_if_in_view() {
-      //get current window information
-      var window_height = web_window.height();
-      var window_top_position = web_window.scrollTop();
-      var window_bottom_position = (window_top_position + window_height);
-  
-      //iterate through elements to see if its in view
-      $.each(animation_elements, function() {
-  
-        //get the element sinformation
-        var element = $(this);
-        var element_height = $(element).outerHeight();
-        var element_top_position = $(element).offset().top;
-        var element_bottom_position = (element_top_position + element_height);
-  
-        //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
-        if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
-          element.addClass('in-view');
-        } else {
-          element.removeClass('in-view');
-        }
-      });
-  
+    document.querySelector('.triangle img').style.transform = `rotateZ(${rotationValue}deg)`;
+    console.log(scrollFraction);
+    let opacityValue;
+    if ( scrollFraction == 1 || scrollFraction == 0) {
+        opacityValue = 1;
+    }else if (scrollFraction > 0.9 || scrollFraction < 0.1) {
+        opacityValue = 0.5;
+    }else {
+        opacityValue = 0;
     }
-  
-    //on or scroll, detect elements in view
-    $(window).on('scroll resize', function() {
-        check_if_in_view()
-      })
-      //trigger our scroll event on initial load
-    $(window).trigger('scroll');
-  
-  });
+
+    document.querySelector('.img__background').style.opacity = opacityValue;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.animation-element');
+
+    function checkPosition() {
+        for (let element of elements) {
+            const positionFromTop = element.getBoundingClientRect().top;
+            const positionFromBottom = element.getBoundingClientRect().bottom;
+
+            if (positionFromTop - window.innerHeight <= 0 && positionFromBottom >= 0) {
+                element.classList.add('in-view');
+            } else {
+                element.classList.remove('in-view');
+            }
+        }
+    }
+    window.addEventListener('scroll', checkPosition);
+    checkPosition(); 
+});
