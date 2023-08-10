@@ -15,9 +15,34 @@
     text-decoration: none;
     color: #000;
 }
-.p-style {
-    font-family: Pitchsans;
+.p-style-nav {
+    font-family: Consolas, monospace;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 28px;
+}
+.p-style {
+    font-family: Consolas, monospace;
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 28px;
+}
+.portfolio {
+    position: relative;
+    left: 50%;
+    transform: translateX(-30%);
+}
+.title-style {
+    font-family: Superior title, 'Times New Roman', Times, serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 88spx;
+}
+.fett{
+    font-weight: 700;
+}
+.home-entrance {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid black;
+    width: 50%;
 }
