@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar li {
+    list-style: none;
+    padding: 0 10px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #000;
+}
+.p-style {
+    font-family: Pitchsans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
