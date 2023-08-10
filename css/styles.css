@@ -24,7 +24,6 @@ body {
 .navbar a {
     text-decoration: none;
     color: #000;
-    text-decoration: 1px underline dotted chartreuse;
 }
 .p-style-nav {
     display: flex;
