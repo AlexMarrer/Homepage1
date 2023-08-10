@@ -12,13 +12,10 @@ body {
     border-bottom: 1px #000;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-}
-.navbar ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+        "one two"
+    ;
 }
 .navbar li {
     list-style: none;
@@ -30,25 +27,39 @@ body {
     text-decoration: 1px underline dotted chartreuse;
 }
 .p-style-nav {
+    display: flex;
     font-family: Consolas, monospace;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 28px;
     margin: 3rem;
+}
+.nav__list{
+    grid-area: two;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: flex-end;
 }
 .logo-fancy{
     margin: 3rem;
     width: 50px;
     height: 32px;
-    background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e9524f4684ca251730fc735_Mark-Lines-2%402x.png");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 50px 32px;
     display: block;
     position: fixed;
+    grid-area: one;
 }
 .triangle img {
     width: 50px;
+}
+.img__background{
+    position: absolute;
+    height: 35px;
+    left: 20px;
+    top: 27px;
 }
 .triangle {
     width: 100px;
@@ -162,7 +173,7 @@ body {
     margin-right: 12rem;
 }
 
-/*---------------------------------------------------------Animation--------------------------------------------------*/
+/*---------------------------------------------------------Animation CREDITS:(https://codepen.io/simoncodrington/pen/Mwgqqd)--------------------------------------------------*/
 body {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
@@ -228,27 +239,27 @@ body {
   }
   /*animation element sliding left*/
   
-  .animation-element.slide-left {
+  .animation-element.slide-right {
     opacity: 0;
     -moz-transition: all 500ms linear;
     -webkit-transition: all 500ms linear;
     -o-transition: all 500ms linear;
     transition: all 500ms linear;
-    -moz-transform: translate3d(-100px, 0px, 0px);
-    -webkit-transform: translate3d(-100px, 0px, 0px);
-    -o-transform: translate(-100px, 0px);
-    -ms-transform: translate(-100px, 0px);
-    transform: translate3d(-100px, 0px, 0px);
-  }
-  
-  .animation-element.slide-left.in-view {
+    -moz-transform: translate3d(100px, 0px, 0px);
+    -webkit-transform: translate3d(100px, 0px, 0px);
+    -o-transform: translate(100px, 0px);
+    -ms-transform: translate(100px, 0px);
+    transform: translate3d(100px, 0px, 0px);
+}
+
+.animation-element.slide-right.in-view {
     opacity: 1;
     -moz-transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
     -o-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     transform: translate3d(0px, 0px, 0px);
-  }
+}
   /*animation slide left styled for testimonials*/
   
   .animation-element.slide-left.testimonial {
