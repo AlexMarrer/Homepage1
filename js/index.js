@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
     let opacityValue;
     if ( scrollFraction == 1 || scrollFraction == 0) {
         opacityValue = 1;
-    }else if (scrollFraction > 0.9 || scrollFraction < 0.1) {
+    }else if (scrollFraction > 0.9 || scrollFraction < 0.04) {
         opacityValue = 0.5;
     }else {
         opacityValue = 0;

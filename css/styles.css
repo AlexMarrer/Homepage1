@@ -1,15 +1,24 @@
 /** {
     border: 1px solid red;
 }*/
+.left{
+  text-align: left;
+}
+.right{
+  text-align: right;
+}
 body {
     margin: 0;
 }
 .container {
     background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e7c21a34149343b88c20898_Gradient-home.png"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-    background-position: -210px 0, 0 0;
-    background-size: 140%, auto;
+    background-position: -200px 0, 0 0;
+    background-size: 150%, auto;
     background-attachment: scroll, scroll;
     border-bottom: 1px #000;
+    background-repeat: no-repeat, repeat;
+    padding: 0;
+    
 }
 .navbar {
     display: grid;
@@ -55,10 +64,11 @@ body {
     width: 50px;
 }
 .img__background{
+    width: 65px;
     position: absolute;
-    height: 35px;
-    left: 20px;
-    top: 27px;
+    height: 45px;
+    left: 27px;
+    top: 0px;
 }
 .triangle {
     width: 100px;
@@ -66,10 +76,6 @@ body {
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
-}
-#reload {
-    width: 50px;
-    height: 50px; 
 }
 .p-style {
     font-family: Consolas, monospace;
@@ -91,7 +97,7 @@ body {
 }
 .h2-title-style{
     font-family: Superior title, 'Times New Roman', Times, serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
     line-height: 58px;
 }
@@ -112,6 +118,7 @@ body {
     height: 400px;
     border: 3px solid white;
     border-radius: 10px;
+    box-shadow: 18px -1px 16px -2px rgba(0,0,0,0.1);
 }
 .airbnb-left {
     display: flex;
@@ -127,6 +134,7 @@ body {
 }
 .portfolio-number-box{
     text-align: center;
+
 }
 .airbnb-title {
     border-right: 1px solid black;
@@ -139,7 +147,42 @@ body {
     margin-right: 12rem;
 }
 /*---------------------------------------------------------ANIMAL HEALTH TIMELINE--------------------------------------------------*/
-
+.portfolio__footer{
+  background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e9f89227fb48a0cac861026_New-Footer-BG%401x.png");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 1724px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 0 96px;
+  display: flex;
+  padding-top: 10rem;
+}
+.footer__divider {
+  margin-top: 5rem;
+  border-top: solid 1px #000;
+  width: 50%;
+  margin-left: 25%;
+  padding-bottom: 10rem;
+}
+.portfolio__footer_box{
+  width: 62.5%;
+  margin-right: 25% ;
+}
+.portfolio__footer_box ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.portfolio__footer_box li {
+    list-style: none;
+    padding: 0 10px;
+}
 .portfolio1 {
     display: flex;
     margin-top: 8rem;
@@ -148,9 +191,15 @@ body {
     height: 400px;
     border: 3px solid white;
     border-radius: 20px;
+    grid-area: two;
+    box-shadow: 18px -1px 16px -2px rgba(0,0,0,0.1);
 }
 .portfolio1-left {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.58fr 1fr;
+    grid-template-areas: 
+        "one two"
+    ;
     width: 100%;
 }
 .portfolio1-text {
@@ -164,12 +213,16 @@ body {
 }
 .portfolio1-title {
     border-right: 1px solid black;
-    padding-right: 8rem;
+    padding-right: 10rem;
     padding-bottom: 1rem;
     margin: 0;
 }
+.portfolio1_title h2{
+  padding: 1rem;
+}
 .portfolio1-information {
-    margin-right: 12rem;
+    margin-right: 5rem;
+    grid-area: one;
 }
 
 /*---------------------------------------------------------Animation CREDITS:(https://codepen.io/simoncodrington/pen/Mwgqqd)--------------------------------------------------*/
@@ -228,7 +281,6 @@ body {
   
   .container {
     position: relative;
-    padding: 25px;
   }
   /*animation element*/
   
