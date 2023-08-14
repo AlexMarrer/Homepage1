@@ -5,9 +5,9 @@ window.addEventListener('scroll', () => {
     document.querySelector('.triangle img').style.transform = `rotateZ(${rotationValue}deg)`;
     console.log(scrollFraction);
     let opacityValue;
-    if ( scrollFraction == 1 || scrollFraction == 0) {
+    if ( scrollFraction >= 1 || scrollFraction <= 0) {
         opacityValue = 1;
-    }else if (scrollFraction > 0.9 || scrollFraction < 0.04) {
+    }else if (scrollFraction > 0.94 || scrollFraction < 0.06) {
         opacityValue = 0.5;
     }else {
         opacityValue = 0;
@@ -33,4 +33,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.addEventListener('scroll', checkPosition);
     checkPosition(); 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const aTag = document.getElementById('aWork');
+  const transitionElements = document.querySelectorAll('.transition');
+
+  aTag.addEventListener('click', e => {
+      e.preventDefault();
+
+      transitionElements.forEach(element => {
+          element.classList.add('transition--opacity');
+          element.classList.remove('transition--opacity--reverse');
+      });
+
+      setTimeout(() => {
+          transitionElements.forEach(element => {
+              element.classList.remove('transition--opacity');
+              element.classList.add('transition--opacity--reverse');
+          });
+          window.location.href = aTag.href;
+      }, 1500);
+  });
 });
