@@ -37,13 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const aTag = document.getElementById('aWork');
   const transitionElements = document.querySelectorAll('.transition');
-  const workAnker = document.getElementById('portfolio-work');
   let p = 3;
   let q = 7;
-  if(!workAnker) {
-    console.log('no workAnker');
-    return;
-  }
   const pxToScroll = 3500;
 
       aTag.addEventListener('click', e => {
