@@ -1,6 +1,16 @@
-/** {
-    border: 1px solid red;
-}*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+body {  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  background: #333;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -398,4 +408,16 @@ i.fa {
     height: 85px;
     margin-bottom: 5px;
   }
+}
+.footer_dots {
+  z-index: 3;
+  width: 352px;
+  height: 202px;
+  background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e859553fc819702b5aee379_Footer%20Dots%402x.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 352px;
+  position: relative;
+  left: 30%;
+  top: 200px;
 }

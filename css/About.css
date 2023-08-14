@@ -1,3 +1,16 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+body {  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  background: #333;
+}
 ::selection {
     color: white;
     background: black;
@@ -68,7 +81,7 @@
     position: fixed;
     grid-area: one;
   }
-  .triangle img {
+  ._triangle img {
     width: 50px;
   }
   .img__background {
@@ -78,7 +91,7 @@
     left: 27px;
     top: 0px;
   }
-  .triangle {
+  ._triangle {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -109,6 +122,87 @@
   .about__me {
     width: 40%;
     margin-left: 30%;
+  }
+  .bio {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+      "one two"
+    ;
+  }
+  .bio__text {
+    grid-area: one;
+  }
+  .bio__img {
+    max-height: 212px;
+    background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5eb706f479f88606814078dc_Squiggle%402x.png");
+    background-position: 40px;
+    background-repeat: no-repeat;
+    background-size: 16px 120px;
+    grid-area: two;
+  }
+  .bio__img img {
+    height: 200px;
+    margin-left: 5rem;
+    border: 3px solid white;
+    border-radius: 15%;
+  }
+  table {
+    width: 100%;
+  }
+  .bio__tr__td {
+    border-bottom: 1px solid black;
+  }
+  .bio__information {
+    display: grid;
+    grid-template-areas: 
+      "one two three"
+      "four five six";
+  }
+  .box{
+    padding: 0px 15px 15px 15px;
+  }
+  .b1{
+    grid-area: one;
+    border-bottom: 1px solid black;
+  }
+  .b2{
+    grid-area: two;
+    border-inline: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .b3{
+    grid-area: three;
+    border-bottom: 1px solid black;
+  }
+  .b4{
+    grid-area: four;
+  }
+  .b5{
+    grid-area: five;
+    border-inline: 1px solid black;
+  }
+  .b6{
+    grid-area: six;
+  }
+  .underlined {
+    font-family: Consolas, monospace;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: underline;
+  }
+  .footer_dots {
+    z-index: 3;
+    width: 352px;
+    height: 202px;
+    background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e859553fc819702b5aee379_Footer%20Dots%402x.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 352px;
+    position: relative;
+    left: 30%;
+    top: 200px;
   }
   /*---------------------------------------------------------ANIMAL HEALTH TIMELINE--------------------------------------------------*/
   .portfolio__footer {
@@ -147,7 +241,10 @@
     list-style: none;
     padding: 0 10px;
   }
-  .about__me
+  .h2-title-style a {
+    text-decoration: none;
+    color: #000;
+  }
   /*---------------------------------------------------------Animation CREDITS:(https://codepen.io/simoncodrington/pen/Mwgqqd)--------------------------------------------------*/
   body {
     font-size: 16px;
