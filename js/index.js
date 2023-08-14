@@ -3,7 +3,7 @@ window.addEventListener('scroll', () => {
     const rotationValue = scrollFraction * 360;
 
     document.querySelector('.triangle img').style.transform = `rotateZ(${rotationValue}deg)`;
-    console.log(scrollFraction);
+    //console.log(scrollFraction);
     let opacityValue;
     if ( scrollFraction >= 1 || scrollFraction <= 0) {
         opacityValue = 1;
@@ -34,30 +34,43 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkPosition);
     checkPosition(); 
 });
-
 document.addEventListener('DOMContentLoaded', function() {
   const aTag = document.getElementById('aWork');
   const transitionElements = document.querySelectorAll('.transition');
-  const workAnker = document.getElementById('protfolio-work');
-  const pxToScroll = workAnker.getBoundingClientRect().top;
+  const workAnker = document.getElementById('portfolio-work');
+  let p = 3;
+  let q = 7;
+  if(!workAnker) {
+    console.log('no workAnker');
+    return;
+  }
+  const pxToScroll = 3500;
 
       aTag.addEventListener('click', e => {
       e.preventDefault();
+      for (let i = 0; i < 3; i++) {
+          window.scrollBy(0, pxToScroll / 10);
+          console.log(pxToScroll / 10)
+      }
+      
       transitionElements.forEach(element => {
           element.classList.add('transition--opacity');
           element.classList.remove('transition');
       });
-      for (let i = 0; i < 10; i++) {
+      for (let i = p; i < 7; i++) {
           window.scrollBy(0, pxToScroll / 10);
-          console.log(i);
+          console.log("scroll");
       }
 
       setTimeout(() => {
           transitionElements.forEach(element => {
-              element.classList.remove('transition--opacity');
               element.classList.add('transition');
+              element.classList.remove('transition--opacity');
+              for(let i = q; i < 10; i++) {
+                window.scrollBy(0, pxToScroll / 10);
+                console.log("scroll");
+            }
           });
-          window.location.href = aTag.href;
-      }, 1500);
+      }, 500); 
   });
 });
