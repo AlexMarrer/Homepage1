@@ -38,19 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const aTag = document.getElementById('aWork');
   const transitionElements = document.querySelectorAll('.transition');
+  const workAnker = document.getElementById('protfolio-work');
+  const pxToScroll = workAnker.getBoundingClientRect().top;
 
-  aTag.addEventListener('click', e => {
+      aTag.addEventListener('click', e => {
       e.preventDefault();
-
       transitionElements.forEach(element => {
           element.classList.add('transition--opacity');
-          element.classList.remove('transition--opacity--reverse');
+          element.classList.remove('transition');
       });
+      for (let i = 0; i < 10; i++) {
+          window.scrollBy(0, pxToScroll / 10);
+          console.log(i);
+      }
 
       setTimeout(() => {
           transitionElements.forEach(element => {
               element.classList.remove('transition--opacity');
-              element.classList.add('transition--opacity--reverse');
+              element.classList.add('transition');
           });
           window.location.href = aTag.href;
       }, 1500);
