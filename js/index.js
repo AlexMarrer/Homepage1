@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const aTag = document.getElementById('aWork');
   const transitionElements = document.querySelectorAll('.transition');
   let p = 3;
-  let q = 7;
+  let q = 8;
   const pxToScroll = 3500;
 
       aTag.addEventListener('click', e => {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
           element.classList.add('transition--opacity');
           element.classList.remove('transition');
       });
-      for (let i = p; i < 7; i++) {
+      for (let i = p; i < 8; i++) {
           window.scrollBy(0, pxToScroll / 10);
           console.log("scroll");
       }
@@ -66,6 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("scroll");
             }
           });
-      }, 500); 
+      }, 680); 
   });
 });

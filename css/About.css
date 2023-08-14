@@ -11,7 +11,6 @@
   body {
     margin: 0;
   }
-  
   .container {
     background-image: url("https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e7c21a34149343b88c20898_Gradient-home.png"),
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
@@ -106,6 +105,10 @@
   }
   .fett {
     font-weight: 700;
+  }
+  .about__me {
+    width: 40%;
+    margin-left: 30%;
   }
   /*---------------------------------------------------------ANIMAL HEALTH TIMELINE--------------------------------------------------*/
   .portfolio__footer {
