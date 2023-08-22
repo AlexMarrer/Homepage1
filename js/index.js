@@ -1,11 +1,12 @@
 window.addEventListener('scroll', () => {
-    const scrollFraction = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+    let scrollFraction = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+    scrollFraction = Math.min(scrollFraction, 1);
     const rotationValue = scrollFraction * 360;
 
     document.querySelector('.triangle img').style.transform = `rotateZ(${rotationValue}deg)`;
-    //console.log(scrollFraction);
+    console.log(scrollFraction);
     let opacityValue;
-    if ( scrollFraction >= 1 || scrollFraction <= 0) {
+    if ( scrollFraction == 1 || scrollFraction <= 0) {
         opacityValue = 1;
     }else if (scrollFraction > 0.94 || scrollFraction < 0.06) {
         opacityValue = 0.5;
